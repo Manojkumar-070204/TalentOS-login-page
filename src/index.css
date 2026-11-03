@@ -105,15 +105,12 @@ button {
   padding: 35px 42px;
   background: #ffffff;
   overflow-y: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
   transition:
     transform 850ms cubic-bezier(0.22, 1, 0.36, 1),
     opacity 650ms ease;
   will-change: transform;
-}
-
-.auth-form-panel {
-  scrollbar-width: none;
-  -ms-overflow-style: none;
 }
 
 .auth-form-panel::-webkit-scrollbar {
@@ -526,6 +523,87 @@ button {
   }
 }
 
+@media (min-width: 761px) {
+  .auth-card.register-mode {
+    width: min(820px, calc(100% - 80px)) !important;
+    height: min(560px, calc(100vh - 80px)) !important;
+    min-height: 500px !important;
+  }
+
+  .auth-card.register-mode .auth-form-panel {
+    padding: 10px 22px 18px;
+    overflow-y: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .auth-card.register-mode .auth-form-panel::-webkit-scrollbar {
+    display: none;
+  }
+
+  .auth-card.register-mode .auth-content {
+    max-width: 420px;
+    padding-top: 0;
+  }
+
+  .auth-card.register-mode .auth-heading {
+    margin-top: 0;
+    margin-bottom: 25px;
+  }
+
+  .auth-card.register-mode .auth-heading h1 {
+    font-size: 25px;
+    line-height: 1.2;
+  }
+
+  .auth-card.register-mode .auth-heading p {
+    font-size: 11px;
+  }
+
+  .auth-card.register-mode .register-form-grid {
+    column-gap: 10px;
+    row-gap: 8px;
+  }
+
+  .auth-card.register-mode .register-field > label {
+    font-size: 11px;
+  }
+
+  .auth-card.register-mode .register-field .input-group {
+    height: 39px;
+    min-height: 39px;
+  }
+
+  .auth-card.register-mode .register-field .input-group input,
+  .auth-card.register-mode .register-select {
+    height: 37px;
+    font-size: 11px;
+  }
+
+  .auth-card.register-mode .submit-button {
+    min-height: 43px;
+    margin-top: 9px;
+    font-size: 13px;
+  }
+
+  .auth-card.register-mode .auth-footer {
+    margin-top: 24px;
+  }
+
+  .auth-card.register-mode .brand-cap {
+    width: 70px;
+  }
+
+  .auth-card.register-mode .talentos-brand h2 {
+    font-size: 40px;
+  }
+
+  .auth-card.register-mode .talentos-brand p,
+  .auth-card.register-mode .campus-quote p {
+    font-size: 17px;
+  }
+}
+
 @media (max-width: 760px) {
   html,
   body,
@@ -816,17 +894,6 @@ button {
   }
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .auth-image-panel,
-  .auth-form-panel,
-  .talentos-brand,
-  .campus-quote,
-  .submit-button,
-  .submit-button svg {
-    transition: none !important;
-  }
-}
-
 @media (max-width: 760px) {
   .auth-image-panel {
     position: relative;
@@ -846,12 +913,23 @@ button {
     transform: none;
   }
 
-   .campus-quote p {
+  .campus-quote p {
     color: #ffffff;
     font-weight: 800;
     text-shadow:
       0 2px 4px rgba(0, 20, 65, 0.95),
       0 0 10px rgba(0, 20, 65, 0.75),
       0 0 18px rgba(0, 20, 65, 0.45);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .auth-image-panel,
+  .auth-form-panel,
+  .talentos-brand,
+  .campus-quote,
+  .submit-button,
+  .submit-button svg {
+    transition: none !important;
   }
 }
